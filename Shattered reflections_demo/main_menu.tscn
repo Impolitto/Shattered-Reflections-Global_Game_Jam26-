@@ -1,0 +1,137 @@
+[gd_scene format=3 uid="uid://cjqo07sqqdb4"]
+
+[ext_resource type="Script" uid="uid://c3gwgio8k20j7" path="res://menu.gd" id="1_2cnqm"]
+[ext_resource type="Texture2D" uid="uid://dtpi0dsa6eua4" path="res://postapocalypse1.png" id="2_ojml4"]
+[ext_resource type="FontFile" uid="uid://dn8d43xxym1bv" path="res://04B_30__.TTF" id="3_la3il"]
+[ext_resource type="FontFile" uid="uid://fgt0ck7ff01a" path="res://Shattered_Pixels_by_narathira.ttf" id="4_3vytw"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nlkkf"]
+texture = ExtResource("2_ojml4")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vrkn"]
+bg_color = Color(0.011764706, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 9
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jix8l"]
+bg_color = Color(0.38928655, 0.38928664, 0.38928658, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 9
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_glbon"]
+bg_color = Color(0.2382622, 0.2382622, 0.23826218, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 9
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nlkkf"]
+bg_color = Color(0.4075654, 0.40756536, 0.40756533, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 9
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qe12f"]
+bg_color = Color(0.2936601, 0.29366007, 0.29366007, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 9
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jix8l"]
+texture = ExtResource("2_ojml4")
+
+[node name="MainMenu" type="Control" unique_id=760411116]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2cnqm")
+
+[node name="BG" type="Panel" parent="." unique_id=273720516]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_nlkkf")
+
+[node name="start" type="Button" parent="." unique_id=1675822032]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -131.0
+offset_top = -83.0
+offset_right = 122.0
+offset_bottom = 20.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_la3il")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_7vrkn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jix8l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_glbon")
+text = "Start Game"
+
+[node name="quit" type="Button" parent="." unique_id=1458194663]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -134.0
+offset_top = 66.0
+offset_right = 119.0
+offset_bottom = 169.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/icon_hover_color = Color(0.7555768, 0.00045416175, 0.75890577, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.4117647, 0, 0.08627451, 1)
+theme_override_fonts/font = ExtResource("3_la3il")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_7vrkn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nlkkf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qe12f")
+text = "Quit"
+
+[node name="game_title" type="Label" parent="." unique_id=2129239453]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -280.0
+offset_top = 78.0
+offset_right = 287.0
+offset_bottom = 168.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_3vytw")
+theme_override_font_sizes/font_size = 80
+text = "shattered reflections"
+
+[node name="sprite_face" type="Panel" parent="." unique_id=419041066]
+layout_mode = 0
+offset_left = 507.0
+offset_top = 36.0
+offset_right = 598.0
+offset_bottom = 102.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_jix8l")
+
+[connection signal="pressed" from="start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
